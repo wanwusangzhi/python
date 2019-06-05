@@ -30,22 +30,27 @@ def cylinder_volume(height, radius):
 
 在函数中使用变量时，务必要考虑作用域。如果变量是在函数内创建的，则只能在该函数内使用该变量。你无法从该函数外面访问该变量。
 
-# This will result in an error
+#### This will result in an error
+```
 def some_function():
     word = "hello"
 
 print(word)
 这意味着你可以为在不同函数内使用的不同变量使用相同的名称。
+```
 
-# This works fine
+#### This works fine
+```
 def some_function():
     word = "hello"
 
 def another_function():
     word = "goodbye"
 像这样在函数之外定义的变量依然可以在函数内访问。
+```
 
-# This works fine
+#### This works fine
+```
 word = "hello"
 
 def some_function():
@@ -60,40 +65,19 @@ print(word)
 幸运的是，你不需要不断想出新的名称。可以为对象重复使用相同的名称，只要它们位于不同的作用域即可。
 
 良好实践：建议将变量定义在所需的最小作用域内。虽然函数_可以_引用在更大的作用域内定义的变量，但是通常不建议这么做，因为如果程序有很多变量，你可能不知道你定义了什么变量。
-
-文档
-文档使代码更容易理解和使用。函数尤其容易理解，因为它们通常使用文档字符串，简称 docstrings。文档字符串是一种注释，用于解释函数的作用以及使用方式。下面是一个包含文档字符串的人口密度函数。
-
-def population_density(population, land_area):
-    """Calculate the population density of an area. """
-    return population / land_area
-文档字符串用三个引号引起来，第一行简要解释了函数的作用。如果你觉得信息已经足够了，可以在文档字符串中只提供这么多的信息；一行文档字符串完全可接受，如上述示例所示。
-
-def population_density(population, land_area):
-    """Calculate the population density of an area.
-
-    INPUT:
-    population: int. The population of that area
-    land_area: int or float. This function is unit-agnostic, if you pass in values in terms
-    of square km or square miles the function will return a density in those units.
-
-    OUTPUT: 
-    population_density: population / land_area. The population density of a particular area.
-    """
-    return population / land_area
-如果你觉得需要更长的句子来解释函数，可以在一行摘要后面添加更多信息。在上述示例中，可以看出我们对函数的参数进行了解释，描述了每个参数的作用和类型。我们经常还会对函数输出进行说明。
-
-文档字符串的每个部分都是可选的。但是，提供文档字符串是一个良好的编程习惯。你可以在此处详细了解文档字符串惯例。
-
+```
 
 ## 文档
 文档使代码更容易理解和使用。函数尤其容易理解，因为它们通常使用文档字符串，简称 docstrings。文档字符串是一种注释，用于解释函数的作用以及使用方式。下面是一个包含文档字符串的人口密度函数。
-
+```
 def population_density(population, land_area):
     """Calculate the population density of an area. """
     return population / land_area
+ ```
+
 文档字符串用三个引号引起来，第一行简要解释了函数的作用。如果你觉得信息已经足够了，可以在文档字符串中只提供这么多的信息；一行文档字符串完全可接受，如上述示例所示。
 
+```
 def population_density(population, land_area):
     """Calculate the population density of an area.
 
@@ -107,8 +91,10 @@ def population_density(population, land_area):
     """
     return population / land_area
 如果你觉得需要更长的句子来解释函数，可以在一行摘要后面添加更多信息。在上述示例中，可以看出我们对函数的参数进行了解释，描述了每个参数的作用和类型。我们经常还会对函数输出进行说明。
+```
 
 文档字符串的每个部分都是可选的。但是，提供文档字符串是一个良好的编程习惯。你可以在此处详细了解文档字符串惯例。
+
 ## Lambda 与 Map
 
 ```
